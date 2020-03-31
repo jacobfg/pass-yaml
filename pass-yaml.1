@@ -1,0 +1,65 @@
+.TH PASS-OTP 1 "2020 March 31" "Password store YAML extension"
+
+.SH NAME
+pass-yaml - A \fBpass\fP(1) extension for outputing YAML
+
+.SH SYNOPSIS
+.B pass yaml
+[
+.I COMMAND
+] [
+.I OPTIONS
+]... [
+.I ARGS
+]...
+
+.SH DESCRIPTION
+
+.B pass-yaml
+extends the
+.BR pass (1)
+utility with the
+.B yaml
+command for outputing YAML formated text, requires the password is the first
+line of the text and the rest is already formatted yaml..
+
+.SH COMMANDS
+
+.TP
+\fBotp \fP [ \fI--otp\fP, \fI-o\fP ] \fIpass-name\fP
+
+Output YAML formatted key from secret data stored in \fIpass-name\fP.
+If \fI--opt\fP or \fI-o\fP is specified, do not print
+the code but instead copy it to the clipboard using \fBxclip\fP(1)
+and then restore the clipboard after 45 (or \fIPASSWORD_STORE_CLIP_TIME\fP)
+seconds. This command is alternatively named \fBshow\fP.
+
+.SH OPTIONS
+
+.TP
+\fBhelp\fP, \fB\-h\fP, \fB\-\-help\fP
+Show usage message.
+
+.SH SEE ALSO
+.BR pass (1),
+
+.SH AUTHORS
+.B pass-yaml
+was written by
+.MT jacobfg@gmail.com
+Jacob Fleming-Gale
+.ME .
+
+.SH COPYING
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.

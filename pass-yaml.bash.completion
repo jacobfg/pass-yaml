@@ -1,0 +1,15 @@
+PASSWORD_STORE_EXTENSION_COMMANDS+=(yaml)
+
+__password_store_extension_complete_yaml() {
+  if [[ $COMP_CWORD -gt 2 ]]; then
+    case "${COMP_WORDS[2]}" in
+      *)
+        COMPREPLY+=($(compgen -W "-h --help" -- ${cur}))
+        _pass_complete_entries
+        ;;
+    esac
+  else
+      COMPREPLY+=($(compgen -W "show -h --help -o --otp" -- ${cur}))
+      _pass_complete_entries 1
+  fi
+}
